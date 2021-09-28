@@ -38,7 +38,7 @@ public class MyCustomString implements MyCustomStringInterface {
         return countNumbers;
     }
 
-    //getEeveryNthCharacterFromBeginningOrEnd
+    //getEveryNthCharacterFromBeginningOrEnd
     @Override
     public String getEveryNthCharacterFromBeginningOrEnd(int n, boolean BeginOrEnd){
     	String NthNumber = " ";
