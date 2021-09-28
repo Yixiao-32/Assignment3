@@ -31,31 +31,31 @@ public class MyCustomStringTest {
 
     @Test (expected = NullPointerException.class)
     public void testCountNumbers2() {
-        mycustomsting.setString(null);
+        mycustomstring.setString(null);
         mycustomstring.countNumbers();
     }
 
     @Test
     public void testCountNumbers3() {
-        mycustomsting.setString("There is 1 apple and two bananas on the table.");
+        mycustomstring.setString("There is 1 apple and two bananas on the table.");
         assertEquals(1, mycustomstring.countNumbers());
     }
 
     @Test
     public void testCountNumbers4() {
-        mycustomsting.setString("Today is Sept 27th and Torrow is 28th");
+        mycustomstring.setString("Today is Sept 27th and Torrow is 28th");
         assertEquals(2, mycustomstring.countNumbers());
     }
 
     @Test
     public void testCountNumbers5() {
-        mycustomsting.setString("Today is rain.");
+        mycustomstring.setString("Today is rain.");
         assertEquals(0, mycustomstring.countNumbers());
     }
 
     @Test
     public void testCountNumbers6() {
-        mycustomsting.setString("test: 0 1 2 3");
+        mycustomstring.setString("test: 0 1 2 3");
         assertEquals(4, mycustomstring.countNumbers());
     }
 
@@ -82,7 +82,7 @@ public class MyCustomStringTest {
     @Test(expected = IllegalArgumentException.class)
     public void testGetEveryNthCharacterFromBeginningOrEnd4() {
     	mycustomstring.setString("HELLO");
-        mycustomstring.getEveryNthCharacterFromBeginningOrEnd(0, true));
+        mycustomstring.getEveryNthCharacterFromBeginningOrEnd(-1, true);
     }
 
     @Test

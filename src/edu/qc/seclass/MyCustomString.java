@@ -1,24 +1,28 @@
 package edu.qc.seclass;
 
-public abstract class MyCustomString implements MyCustomStringInterface {
+public class MyCustomString implements MyCustomStringInterface {
     
     private String myString;
 
-    public String getString(String myString){
-        
-        if(this.myString.isEmpty()){
-            return null;
-        }
-        return this.myString;
-    }
 
+	@Override
+	public String getString() {
+		if(this.myString.isEmpty()){
+			return null;
+		}
 
+		else{
+			return this.myString;
+		}
+	}
+
+	@Override
 	public void setString(String myString){
         this.myString = myString;
     }
 
     //countNumbers
-    
+    @Override
     public int countNumbers(){
     	
     	if (myString.isEmpty()) {
@@ -35,7 +39,7 @@ public abstract class MyCustomString implements MyCustomStringInterface {
     }
 
     //getEeveryNthCharacterFromBeginningOrEnd
-    
+    @Override
     public String getEveryNthCharacterFromBeginningOrEnd(int n, boolean BeginOrEnd){
     	String NthNumber = " ";
     	if(n <= 0) {
@@ -50,9 +54,10 @@ public abstract class MyCustomString implements MyCustomStringInterface {
     			NthNumber = NthNumber + Character.toString(myString.charAt(i));
     		}
     	}
+    	
     	//from end to begin
     	else {
-    		for (int i = myString.length() - n; i >= 0; i+=n) {
+    		for (int i = myString.length() - n; i >= 0; i-=n) {
     			NthNumber = NthNumber + Character.toString(myString.charAt(i));
     		}
     	}
@@ -60,7 +65,7 @@ public abstract class MyCustomString implements MyCustomStringInterface {
     }
     
     //converDigitsToNamesInSubstring
-    
+    @Override
     public void convertDigitsToNamesInSubstring(int startPosition, int endPosition){
     	
     	if(startPosition > endPosition){
@@ -130,7 +135,7 @@ public abstract class MyCustomString implements MyCustomStringInterface {
             	   if(substring.equals("9")){
             		   digit="Nine";
             	   }
-            	  digit += digit;
+            	  digit = digit + digit;
             	 }  
             }
         
